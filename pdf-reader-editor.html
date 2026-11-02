@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inazira PDF Reader &amp; Editor — Download for Windows</title>
+<meta name="description" content="Inazira PDF Reader & Editor: read, highlight, edit, merge, split and compress PDFs on your Windows PC. Supports Bengali and English text. Works offline — your files never leave your computer." />
+<meta name="theme-color" content="#0f1c2e" />
+<link rel="icon" type="image/png" href="assets/pdf-reader-editor-favicon.png" />
+<style>
+  :root{
+    --navy:#0f1c2e; --navy2:#16273d; --brass:#c89b3c; --brass-l:#e6c878; --ivory:#ede6d6; --muted:#93a1b0; --teal:#3a6b65;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ivory);
+       background:radial-gradient(1200px 600px at 50% -200px,#1b3354 0%,var(--navy) 55%,#0a1422 100%) fixed;line-height:1.6}
+  a{color:var(--brass-l)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  /* top strip */
+  .top{border-bottom:1px solid rgba(200,155,60,.55);background:linear-gradient(180deg,var(--navy),var(--navy2))}
+  .top .wrap{display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;padding-bottom:12px;position:relative}
+  .back{position:absolute;left:22px;font-size:13px;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--brass-l)}
+  @media (max-width:640px){.back{display:none}}
+  .eyebrow{color:var(--brass);font-size:12px;letter-spacing:.3em;font-weight:700;display:flex;align-items:center;gap:12px}
+  .eyebrow:before,.eyebrow:after{content:"";width:34px;height:1px;background:var(--brass)}
+  /* hero */
+  .hero{text-align:center;padding:54px 0 30px}
+  .appicon{width:96px;height:96px;display:block;margin:0 auto 18px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.45))}
+  h1{font-family:"Playfair Display",Georgia,"Times New Roman",serif;color:var(--brass-l);font-size:clamp(34px,6vw,58px);line-height:1.12;margin:0 0 14px;font-weight:700}
+  .lead{max-width:680px;margin:0 auto;color:#b4bfcb;font-size:clamp(16px,2.2vw,19px)}
+  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:30px 0 10px}
+  .btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;border-radius:12px;padding:14px 26px;font-weight:700;min-width:260px;transition:transform .12s,box-shadow .12s}
+  .btn small{font-weight:500;opacity:.8;font-size:12.5px}
+  .btn.primary{background:linear-gradient(180deg,#d8ac4d,var(--brass));color:#1a1405;box-shadow:0 8px 24px rgba(200,155,60,.28)}
+  .btn.ghost{border:1px solid rgba(200,155,60,.6);color:var(--brass-l);background:rgba(255,255,255,.02)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,155,60,.3)}
+  .meta{color:var(--muted);font-size:13.5px}
+  /* screenshot */
+  .shot{margin:34px auto 10px;max-width:960px;border-radius:14px;overflow:hidden;border:1px solid rgba(200,155,60,.45);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+  .shot img{display:block;width:100%;height:auto}
+  /* sections */
+  section{padding:46px 0 6px}
+  h2{font-family:"Playfair Display",Georgia,serif;color:var(--brass-l);font-size:28px;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(222px,1fr));gap:16px}
+  .card{background:rgba(255,255,255,.035);border:1px solid rgba(147,161,176,.2);border-radius:12px;padding:18px 18px 16px}
+  .card h3{margin:0 0 6px;font-size:16.5px;color:var(--ivory)}
+  .card p{margin:0;color:#aab6c3;font-size:14.5px}
+  .card .ic{font-size:22px;margin-bottom:6px}
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  ol.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 58px;background:rgba(255,255,255,.035);border:1px solid rgba(147,161,176,.2);border-radius:12px}
+  ol.steps li:before{content:counter(s);position:absolute;left:16px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--brass);color:#1a1405;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .note{border-left:3px solid var(--brass);background:rgba(200,155,60,.08);padding:12px 16px;border-radius:0 10px 10px 0;color:#d8d2c2;font-size:14.5px;margin-top:14px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  td{padding:9px 12px;border-bottom:1px solid rgba(147,161,176,.18);vertical-align:top}
+  td:first-child{color:var(--muted);width:34%}
+  code,.hash{font-family:Consolas,"SFMono-Regular",Menlo,monospace;font-size:12.5px;word-break:break-all;color:#d8d2c2}
+  pre{background:#0a1422;border:1px solid rgba(147,161,176,.2);border-radius:10px;padding:12px 14px;overflow:auto;margin:10px 0 0}
+  ul.tight{margin:0;padding-left:20px;color:#b4bfcb}
+  ul.tight li{margin:4px 0}
+  footer{margin-top:60px;border-top:1px solid rgba(200,155,60,.55);background:linear-gradient(180deg,var(--navy2),var(--navy));text-align:center;color:var(--muted);font-size:13px;padding:16px 10px}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap"><a class="back" href="./">← All Inazira software</a><div class="eyebrow">INAZIRA</div></div></div>
+
+<main class="wrap">
+  <div class="hero">
+    <img class="appicon" src="assets/pdf-reader-editor-icon.png" alt="Inazira PDF Reader &amp; Editor icon" width="96" height="96" />
+    <h1>PDF Reader &amp; Editor</h1>
+    <p class="lead">Read, highlight, edit, merge, split and compress PDFs on your Windows PC — with Bengali and English text support. Works offline, so your files never leave your computer.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-Setup-2.1.1.exe" download>⬇ Download for Windows<small>Installer · v2.1.1 · 84 MB</small></a>
+      <a class="btn ghost" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-2.1.1-portable-win-x64.zip" download>Portable version (no install)<small>ZIP · v2.1.1 · 117 MB</small></a>
+    </div>
+    <div class="meta">Windows 10 / 11 · 64-bit · Released 30 October 2026</div>
+    <div class="shot"><img src="assets/pdf-reader-editor-screenshot.png" alt="Inazira PDF Reader & Editor showing an invoice with a highlight, an edited date and Bengali text" /></div>
+  </div>
+
+  <section id="features">
+    <h2>What you can do</h2>
+    <p class="sub">Everything runs on your computer — no account and no upload.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">📖</div><h3>Read comfortably</h3><p>Smooth scrolling through every page, page thumbnails, a separate tab for each PDF, full-screen reading (F11), and text you can select and copy.</p></div>
+      <div class="card"><div class="ic">🔤</div><h3>Add text — English &amp; বাংলা</h3><p>Click anywhere and type. Choose font, bold, italic, size and colour. Bengali text is supported with a built-in font.</p></div>
+      <div class="card"><div class="ic">⬜</div><h3>Whiteout &amp; retype</h3><p>Cover a word or line, then type the correction in the same spot. The cover blends into the paper colour of scanned pages.</p></div>
+      <div class="card"><div class="ic">🖍</div><h3>Highlight</h3><p>Drag to highlight in any colour. Move, resize or remove highlights any time before you save.</p></div>
+      <div class="card"><div class="ic">🖼</div><h3>Add images</h3><p>Insert a logo or signature image, crop it, then drag and resize it exactly where you want it.</p></div>
+      <div class="card"><div class="ic">📑</div><h3>Pages &amp; files</h3><p>Rotate, delete, insert and re-order pages. Merge PDFs together, or split one into several files and choose which to keep.</p></div>
+      <div class="card"><div class="ic">↶</div><h3>Undo &amp; redo</h3><p>Every step can be undone. You are asked before closing anything with unsaved changes.</p></div>
+      <div class="card"><div class="ic">🔒</div><h3>Private by design</h3><p>No internet needed. Your documents are opened and saved only on your own computer.</p></div>
+      <div class="card"><div class="ic">🗜</div><h3>Compress</h3><p>Make big scanned PDFs much smaller for email or upload. Pick a level; a compressed copy is saved and your original stays untouched.</p></div>
+      <div class="card"><div class="ic">📂</div><h3>Opens from Windows</h3><p>Right-click a PDF and choose <i>Open with</i>, or drag a PDF onto the window. Each one opens in its own tab.</p></div>
+      <div class="card"><div class="ic">🔍</div><h3>Exact zoom</h3><p>Type any zoom size (like 125), use Ctrl + and Ctrl −, or pick one from the list. Ctrl 0 fits the page to the window width.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Fast with big scans</h3><p>Only the pages you are looking at are drawn, so long, heavy scanned PDFs open in seconds and stay smooth.</p></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>How to install</h2>
+    <p class="sub">Takes about a minute. No administrator rights needed.</p>
+    <ol class="steps">
+      <li><b>Download</b> the installer using the button above.</li>
+      <li><b>Double-click</b> the downloaded file. If Windows shows <i>“Windows protected your PC”</i>, click <b>More info</b>, then <b>Run anyway</b>.</li>
+      <li><b>Follow the steps</b> (the default folder is fine), then open <b>Inazira PDF Reader &amp; Editor</b> from your Desktop or Start menu.</li>
+    </ol>
+    <div class="note"><b>Why the Windows warning?</b> The installer is not yet digitally signed with a paid code-signing certificate, so Windows SmartScreen cannot recognise the publisher. You can confirm your download is genuine with the checksums below.</div>
+    <p class="meta" style="margin-top:14px"><b>Make it your default PDF app (optional):</b> right-click any PDF → <b>Open with</b> → <b>Choose another app</b> → <b>Inazira PDF Reader &amp; Editor</b> → tick <i>Always use this app</i>.</p>
+    <p class="meta" style="margin-top:8px">To uninstall: <b>Settings → Apps → Installed apps → Inazira PDF Reader &amp; Editor → Uninstall</b>. The portable ZIP needs no installation: unzip it anywhere and run <code>InaziraPDF.exe</code>.</p>
+  </section>
+
+  <section id="verify">
+    <h2>Check your download</h2>
+    <p class="sub">Compare the SHA-256 checksum of the file you downloaded with the value below.</p>
+    <table>
+      <tr><td>Installer</td><td><code>Inazira-PDF-Reader-Editor-Setup-2.1.1.exe</code><br><span class="hash">10ae0a4011d26e08095880d5e36aa5831bc65f9bca0d70ee059a39c5c0acd5f2</span></td></tr>
+      <tr><td>Portable ZIP</td><td><code>Inazira-PDF-Reader-Editor-2.1.1-portable-win-x64.zip</code><br><span class="hash">83df4d35462c3d8e907b62c33ff10b9949813c3bdc89a0f0985af9a7e03b8db3</span></td></tr>
+    </table>
+    <p class="meta" style="margin:12px 0 0">In Windows PowerShell:</p>
+<pre>Get-FileHash .\Inazira-PDF-Reader-Editor-Setup-2.1.1.exe -Algorithm SHA256</pre>
+  </section>
+
+  <section id="requirements">
+    <h2>Good to know</h2>
+    <table>
+      <tr><td>Works on</td><td>Windows 10 and 11 (64-bit). Other systems are not available yet.</td></tr>
+      <tr><td>Recommended</td><td>4 GB RAM or more; about 350 MB free disk space.</td></tr>
+      <tr><td>Languages in text</td><td>English and Bengali (বাংলা). Other scripts are not supported yet.</td></tr>
+      <tr><td>Whiteout</td><td>Covers content visually; it does <b>not</b> erase it from the file. Do not rely on it to hide confidential information.</td></tr>
+      <tr><td>Compress</td><td>Shrinks the JPEG images inside a PDF (typical for scans and photos). A PDF that is mostly text barely changes in size.</td></tr>
+      <tr><td>Not supported yet</td><td>Password-protected PDFs, form filling, OCR and digital signatures.</td></tr>
+    </table>
+  </section>
+
+  <section id="changelog">
+    <h2>What's new</h2>
+    <p class="sub">Version 2.1.1 — 30 October 2026</p>
+    <ul class="tight">
+      <li>First public release.</li>
+      <li>Continuous scrolling, tabs, thumbnails, fit-to-width and typed zoom.</li>
+      <li>Full-screen reading (F11) and a show/hide page list (Ctrl+B).</li>
+      <li>Zoom shortcuts: Ctrl +, Ctrl −, Ctrl 0 (fit width) and Ctrl 1 (real size).</li>
+      <li>Compress PDFs (saves a separate, smaller copy).</li>
+      <li>Open PDFs with “Open with”, or by dragging them onto the window.</li>
+      <li>Edit with text (English and Bengali), highlight, whiteout &amp; retype, and images with crop, move and resize.</li>
+      <li>Rotate, delete, insert, re-order, merge and split pages; full undo and redo.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>© 2026 INAZIRA. All Rights Reserved.</footer>
+</body>
+</html>

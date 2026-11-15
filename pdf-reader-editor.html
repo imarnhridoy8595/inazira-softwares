@@ -1,105 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inazira PDF Reader &amp; Editor — Download for Windows</title>
-<meta name="description" content="Inazira PDF Reader & Editor: read, highlight, edit, merge, split and compress PDFs on your Windows PC. Supports Bengali and English text. Works offline — your files never leave your computer." />
-<meta name="theme-color" content="#0f1c2e" />
-<link rel="icon" type="image/png" href="assets/pdf-reader-editor-favicon.png" />
+<meta name="description" content="Inazira PDF Reader & Editor: read, highlight, edit, merge, split and compress PDFs on your Windows PC. Supports Bengali and English text. Works offline — your files never leave your computer.">
+<meta name="theme-color" content="#0a2e5c">
+<link rel="icon" type="image/png" href="assets/pdf-reader-editor-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --navy:#0f1c2e; --navy2:#16273d; --brass:#c89b3c; --brass-l:#e6c878; --ivory:#ede6d6; --muted:#93a1b0; --teal:#3a6b65;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ivory);
-       background:radial-gradient(1200px 600px at 50% -200px,#1b3354 0%,var(--navy) 55%,#0a1422 100%) fixed;line-height:1.6}
-  a{color:var(--brass-l)}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-  /* top strip */
-  .top{border-bottom:1px solid rgba(200,155,60,.55);background:linear-gradient(180deg,var(--navy),var(--navy2))}
-  .top .wrap{display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;padding-bottom:12px;position:relative}
-  .back{position:absolute;left:22px;font-size:13px;color:var(--muted);text-decoration:none}
-  .back:hover{color:var(--brass-l)}
-  @media (max-width:640px){.back{display:none}}
-  .eyebrow{color:var(--brass);font-size:12px;letter-spacing:.3em;font-weight:700;display:flex;align-items:center;gap:12px}
-  .eyebrow:before,.eyebrow:after{content:"";width:34px;height:1px;background:var(--brass)}
-  /* hero */
-  .hero{text-align:center;padding:54px 0 30px}
-  .appicon{width:96px;height:96px;display:block;margin:0 auto 18px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.45))}
-  h1{font-family:"Playfair Display",Georgia,"Times New Roman",serif;color:var(--brass-l);font-size:clamp(34px,6vw,58px);line-height:1.12;margin:0 0 14px;font-weight:700}
-  .lead{max-width:680px;margin:0 auto;color:#b4bfcb;font-size:clamp(16px,2.2vw,19px)}
-  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:30px 0 10px}
-  .btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;border-radius:12px;padding:14px 26px;font-weight:700;min-width:260px;transition:transform .12s,box-shadow .12s}
-  .btn small{font-weight:500;opacity:.8;font-size:12.5px}
-  .btn.primary{background:linear-gradient(180deg,#d8ac4d,var(--brass));color:#1a1405;box-shadow:0 8px 24px rgba(200,155,60,.28)}
-  .btn.ghost{border:1px solid rgba(200,155,60,.6);color:var(--brass-l);background:rgba(255,255,255,.02)}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,155,60,.3)}
-  .meta{color:var(--muted);font-size:13.5px}
-  /* screenshot */
-  .shot{margin:34px auto 10px;max-width:960px;border-radius:14px;overflow:hidden;border:1px solid rgba(200,155,60,.45);box-shadow:0 30px 70px rgba(0,0,0,.55)}
-  .shot img{display:block;width:100%;height:auto}
-  /* sections */
-  section{padding:46px 0 6px}
-  h2{font-family:"Playfair Display",Georgia,serif;color:var(--brass-l);font-size:28px;margin:0 0 6px}
-  .sub{color:var(--muted);margin:0 0 22px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(222px,1fr));gap:16px}
-  .card{background:rgba(255,255,255,.035);border:1px solid rgba(147,161,176,.2);border-radius:12px;padding:18px 18px 16px}
-  .card h3{margin:0 0 6px;font-size:16.5px;color:var(--ivory)}
-  .card p{margin:0;color:#aab6c3;font-size:14.5px}
-  .card .ic{font-size:22px;margin-bottom:6px}
-  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
-  ol.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 58px;background:rgba(255,255,255,.035);border:1px solid rgba(147,161,176,.2);border-radius:12px}
-  ol.steps li:before{content:counter(s);position:absolute;left:16px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--brass);color:#1a1405;font-weight:800;display:flex;align-items:center;justify-content:center}
-  .note{border-left:3px solid var(--brass);background:rgba(200,155,60,.08);padding:12px 16px;border-radius:0 10px 10px 0;color:#d8d2c2;font-size:14.5px;margin-top:14px}
-  table{width:100%;border-collapse:collapse;font-size:14.5px}
-  td{padding:9px 12px;border-bottom:1px solid rgba(147,161,176,.18);vertical-align:top}
-  td:first-child{color:var(--muted);width:34%}
-  code,.hash{font-family:Consolas,"SFMono-Regular",Menlo,monospace;font-size:12.5px;word-break:break-all;color:#d8d2c2}
-  pre{background:#0a1422;border:1px solid rgba(147,161,176,.2);border-radius:10px;padding:12px 14px;overflow:auto;margin:10px 0 0}
-  ul.tight{margin:0;padding-left:20px;color:#b4bfcb}
-  ul.tight li{margin:4px 0}
-  footer{margin-top:60px;border-top:1px solid rgba(200,155,60,.55);background:linear-gradient(180deg,var(--navy2),var(--navy));text-align:center;color:var(--muted);font-size:13px;padding:16px 10px}
+  :root { --navy:#0a2e5c; --blue:#0066ff; --blue-dark:#0052cc; --blue-soft:#ebf4ff; --bg:#f4f7f9; --text:#666666; --orange:#f04e23; --tile-green:#d9ead3; --green-ink:#2f6b3b; --line:#e3eaf2; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  a { color: var(--blue); } img { max-width: 100%; }
+  .topbar { position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 1px 0 var(--line), 0 6px 18px rgba(10,46,92,0.05); }
+  .topbar-in { max-width:1760px; margin:0 auto; padding:0 clamp(16px, 2.6vw, 48px); height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .brand img { width:48px; height:48px; display:block; }
+  .brand span { font-weight:800; font-size:28px; letter-spacing:.6px; color:var(--navy); }
+  .topnav { display:flex; gap:clamp(18px, 3vw, 42px); }
+  .topnav a { position:relative; text-decoration:none; color:var(--navy); font-weight:500; font-size:19px; padding:6px 0; }
+  .topnav a:hover, .topnav a.active { color: var(--blue); }
+  .topnav a.active::after { content:""; position:absolute; left:0; right:0; bottom:-4px; height:3px; border-radius:3px; background:var(--blue); }
+  .allsites { text-decoration:none; color:var(--navy); font-weight:600; font-size:15px; border:1px solid var(--line); background:#f7fafd; border-radius:999px; padding:10px 18px; transition:all .15s; white-space:nowrap; }
+  .allsites:hover { color:#fff; background:var(--blue); border-color:var(--blue); }
+  .hero { position:relative; overflow:hidden; color:#fff; background:linear-gradient(115deg, #0a2e5c 0%, #0f3f7c 52%, #2c63a1 100%); }
+  .hero::before { content:""; position:absolute; inset:0; background:radial-gradient(700px 260px at 82% 20%, rgba(0,102,255,0.35), transparent 70%), radial-gradient(500px 220px at 8% 110%, rgba(240,78,35,0.18), transparent 70%); }
+  .mtn { position:absolute; left:0; right:0; bottom:-1px; width:100%; height:62%; display:block; }
+  .hero-in { position:relative; max-width:1760px; margin:0 auto; padding:clamp(16px, 3vh, 36px) clamp(16px, 4vw, 76px); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .eyebrow { font-weight:700; font-size:13px; letter-spacing:2.2px; text-transform:uppercase; opacity:.92; }
+  .hero h1 { margin:6px 0 8px; font-weight:600; line-height:1.05; font-size:clamp(28px, min(4vw, 6.4vh), 54px); letter-spacing:-.5px; }
+  .hero p { margin:0; max-width:640px; font-size:clamp(14px, 1.25vw, 18px); opacity:.92; }
+  .script { font-family:'Caveat', 'Segoe Script', cursive; font-weight:700; font-size:clamp(26px, 3vw, 44px); line-height:1.05; transform:rotate(-5deg); text-align:left; text-shadow:0 2px 10px rgba(0,0,0,.35); white-space:nowrap; }
+  footer { background:var(--navy); color:#cfdcf0; margin-top:10px; }
+  .foot-in { max-width:1760px; margin:0 auto; padding:26px clamp(16px, 4vw, 76px); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:14.5px; }
+  footer a { color:#fff; text-decoration:none; font-weight:500; } footer a:hover { text-decoration:underline; }
+
+  main { max-width:1180px; margin:0 auto; padding:0 24px 36px; }
+  .dhero-in { gap:clamp(18px, 3vw, 44px); padding-top:clamp(22px, 5vh, 56px); padding-bottom:clamp(26px, 6vh, 64px); justify-content:flex-start; }
+  .dicon { width:clamp(84px, 9vw, 130px); height:auto; flex-shrink:0; background:#fff; border-radius:22px; padding:12px; box-shadow:0 14px 34px rgba(0,0,0,.35); }
+  .dhero h1 { font-size:clamp(30px, 4.2vw, 56px); margin:6px 0 10px; }
+  .lead { margin:0; max-width:700px; font-size:clamp(15px, 1.4vw, 19px); opacity:.94; }
+  .cta { display:flex; flex-wrap:wrap; gap:14px; margin:20px 0 10px; }
+  .hbtn { display:inline-flex; flex-direction:column; align-items:center; gap:1px; text-decoration:none; border-radius:12px; padding:12px 26px; font-weight:700; font-size:16px; min-width:250px; transition:transform .12s, box-shadow .15s, background .15s; }
+  .hbtn small { font-weight:500; font-size:12.5px; opacity:.8; }
+  .hbtn.primary { background:#fff; color:var(--blue) !important; box-shadow:0 10px 26px rgba(0,0,0,.28); }
+  .hbtn.ghost { color:#fff !important; border:1.5px solid rgba(255,255,255,.65); background:rgba(255,255,255,.06); }
+  .hbtn:hover { transform:translateY(-2px); } .hbtn.ghost:hover { background:rgba(255,255,255,.16); }
+  .dmeta { font-size:14px; opacity:.85; }
+  .crumb { margin:20px 0 6px; font-size:14.5px; } .crumb a { text-decoration:none; font-weight:600; } .crumb a:hover { text-decoration:underline; }
+  .shot { margin:14px auto 6px; max-width:980px; border-radius:16px; overflow:hidden; border:1px solid var(--line); box-shadow:0 18px 46px rgba(10,46,92,.18); background:#fff; }
+  .shot img { display:block; width:100%; height:auto; }
+  .sec { padding:34px 0 4px; }
+  .sec h2 { margin:0 0 4px; color:var(--navy); font-weight:800; font-size:clamp(24px, 2.6vw, 32px); }
+  .sub { margin:0 0 20px; font-size:16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(235px, 1fr)); gap:18px; }
+  .fcard { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; box-shadow:0 2px 12px rgba(10,46,92,.06); transition:transform .18s, box-shadow .18s; }
+  .fcard:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(10,46,92,.13); }
+  .fcard .ic { width:46px; height:46px; border-radius:12px; background:var(--blue-soft); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:10px; }
+  .fcard h3 { margin:0 0 5px; color:var(--navy); font-size:17px; font-weight:700; } .fcard p { margin:0; font-size:14.5px; color:#666; }
+  ol.steps { counter-reset:s; list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+  ol.steps li { counter-increment:s; position:relative; padding:15px 18px 15px 64px; background:#fff; border:1px solid var(--line); border-radius:12px; color:#555; }
+  ol.steps li::before { content:counter(s); position:absolute; left:18px; top:13px; width:32px; height:32px; border-radius:50%; background:var(--blue); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  ol.steps b { color:var(--navy); }
+  .callout { margin-top:14px; background:var(--blue-soft); border-left:4px solid var(--blue); border-radius:0 12px 12px 0; padding:13px 18px; font-size:14.5px; color:#3d4b5f; } .callout b { color:var(--navy); }
+  .muted { color:#6f7b8a; font-size:14.5px; } .muted b { color:var(--navy); }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:14.5px; }
+  td { padding:12px 16px; border-bottom:1px solid var(--line); vertical-align:top; color:#555; } tr:last-child td { border-bottom:0; }
+  td:first-child { width:28%; color:var(--navy); font-weight:600; }
+  code, .hash { font-family:Consolas, 'SFMono-Regular', Menlo, monospace; font-size:12.5px; word-break:break-all; color:#33445c; }
+  code { background:var(--blue-soft); padding:2px 6px; border-radius:5px; }
+  pre { background:var(--navy); color:#e8f0ff; border-radius:10px; padding:13px 16px; overflow:auto; margin:10px 0 0; font-family:Consolas, Menlo, monospace; font-size:13px; }
+  ul.tight { margin:0; padding-left:22px; color:#555; } ul.tight li { margin:5px 0; }
+  @media (max-width:900px) { .topnav { display:none; } .dhero-in { flex-direction:column; align-items:flex-start; } td:first-child { width:34%; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
 </style>
 </head>
 <body>
 
-<div class="top"><div class="wrap"><a class="back" href="./">← All Inazira software</a><div class="eyebrow">INAZIRA</div></div></div>
-
-<main class="wrap">
-  <div class="hero">
-    <img class="appicon" src="assets/pdf-reader-editor-icon.png" alt="Inazira PDF Reader &amp; Editor icon" width="96" height="96" />
-    <h1>PDF Reader &amp; Editor</h1>
-    <p class="lead">Read, highlight, edit, merge, split and compress PDFs on your Windows PC — with Bengali and English text support. Works offline, so your files never leave your computer.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-Setup-2.1.1.exe" download>⬇ Download for Windows<small>Installer · v2.1.1 · 84 MB</small></a>
-      <a class="btn ghost" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-2.1.1-portable-win-x64.zip" download>Portable version (no install)<small>ZIP · v2.1.1 · 117 MB</small></a>
-    </div>
-    <div class="meta">Windows 10 / 11 · 64-bit · Released 30 October 2026</div>
-    <div class="shot"><img src="assets/pdf-reader-editor-screenshot.png" alt="Inazira PDF Reader & Editor showing an invoice with a highlight, an edited date and Bengali text" /></div>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="https://www.inazira.com/" aria-label="INAZIRA home"><img src="assets/inazira-logo.png" alt=""><span>INAZIRA</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="https://www.inazira.com/">Home</a>
+      <a class="active" href="./">Software</a>
+      <!-- add About / Contact links here when you want them -->
+    </nav>
+    <a class="allsites" href="https://www.inazira.com/">All websites →</a>
   </div>
+</header>
 
-  <section id="features">
+<section class="hero dhero">
+  <svg class="mtn" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 220V150l120-62 100 52 140-92 150 100 120-70 160 110 130-86 150 96 170-120 200 120V220z" fill="rgba(255,255,255,0.07)"/>
+      <path d="M0 220V176l150-70 130 64 160-96 160 112 150-82 170 104 150-90 170 70V220z" fill="rgba(255,255,255,0.09)"/>
+      <path d="M0 220v-24l180-50 170 46 190-70 200 66 170-44 210 58 140-28 180 44V220z" fill="rgba(255,255,255,0.12)"/>
+    </svg>
+  <div class="hero-in dhero-in">
+    <img class="dicon" src="assets/pdf-reader-editor-icon.png" alt="Inazira PDF Reader &amp; Editor icon">
+    <div>
+      <div class="eyebrow">Inazira Software</div>
+      <h1>PDF Reader &amp; Editor</h1>
+      <p class="lead">Read, highlight, edit, merge, split and compress PDFs on your Windows PC — with Bengali and English text support. Works offline, so your files never leave your computer.</p>
+      <div class="cta">
+        <a class="hbtn primary" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-Setup-2.1.1.exe" download>⬇ Download for Windows<small>Installer · v2.1.1 · 84 MB</small></a>
+        <a class="hbtn ghost" href="https://github.com/imarnhridoy8595/inazira-softwares/releases/download/pdf-v2.1.1/Inazira-PDF-Reader-Editor-2.1.1-portable-win-x64.zip" download>Portable version (no install)<small>ZIP · v2.1.1 · 117 MB</small></a>
+      </div>
+      <div class="dmeta">Windows 10 / 11 · 64-bit · Released 30 October 2026</div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="crumb"><a href="./">← All Inazira software</a></div>
+  <div class="shot"><img src="assets/pdf-reader-editor-screenshot.png" alt="Inazira PDF Reader &amp; Editor showing an invoice with a highlight, an edited date and Bengali text"></div>
+
+  <section class="sec" id="features">
     <h2>What you can do</h2>
     <p class="sub">Everything runs on your computer — no account and no upload.</p>
     <div class="grid">
-      <div class="card"><div class="ic">📖</div><h3>Read comfortably</h3><p>Smooth scrolling through every page, page thumbnails, a separate tab for each PDF, full-screen reading (F11), and text you can select and copy.</p></div>
-      <div class="card"><div class="ic">🔤</div><h3>Add text — English &amp; বাংলা</h3><p>Click anywhere and type. Choose font, bold, italic, size and colour. Bengali text is supported with a built-in font.</p></div>
-      <div class="card"><div class="ic">⬜</div><h3>Whiteout &amp; retype</h3><p>Cover a word or line, then type the correction in the same spot. The cover blends into the paper colour of scanned pages.</p></div>
-      <div class="card"><div class="ic">🖍</div><h3>Highlight</h3><p>Drag to highlight in any colour. Move, resize or remove highlights any time before you save.</p></div>
-      <div class="card"><div class="ic">🖼</div><h3>Add images</h3><p>Insert a logo or signature image, crop it, then drag and resize it exactly where you want it.</p></div>
-      <div class="card"><div class="ic">📑</div><h3>Pages &amp; files</h3><p>Rotate, delete, insert and re-order pages. Merge PDFs together, or split one into several files and choose which to keep.</p></div>
-      <div class="card"><div class="ic">↶</div><h3>Undo &amp; redo</h3><p>Every step can be undone. You are asked before closing anything with unsaved changes.</p></div>
-      <div class="card"><div class="ic">🔒</div><h3>Private by design</h3><p>No internet needed. Your documents are opened and saved only on your own computer.</p></div>
-      <div class="card"><div class="ic">🗜</div><h3>Compress</h3><p>Make big scanned PDFs much smaller for email or upload. Pick a level; a compressed copy is saved and your original stays untouched.</p></div>
-      <div class="card"><div class="ic">📂</div><h3>Opens from Windows</h3><p>Right-click a PDF and choose <i>Open with</i>, or drag a PDF onto the window. Each one opens in its own tab.</p></div>
-      <div class="card"><div class="ic">🔍</div><h3>Exact zoom</h3><p>Type any zoom size (like 125), use Ctrl + and Ctrl −, or pick one from the list. Ctrl 0 fits the page to the window width.</p></div>
-      <div class="card"><div class="ic">⚡</div><h3>Fast with big scans</h3><p>Only the pages you are looking at are drawn, so long, heavy scanned PDFs open in seconds and stay smooth.</p></div>
+      <div class="fcard"><div class="ic">📖</div><h3>Read comfortably</h3><p>Smooth scrolling through every page, page thumbnails, a separate tab for each PDF, full-screen reading (F11), and text you can select and copy.</p></div>
+      <div class="fcard"><div class="ic">🔤</div><h3>Add text — English &amp; বাংলা</h3><p>Click anywhere and type. Choose font, bold, italic, size and colour. Bengali text is supported with a built-in font.</p></div>
+      <div class="fcard"><div class="ic">⬜</div><h3>Whiteout &amp; retype</h3><p>Cover a word or line, then type the correction in the same spot. The cover blends into the paper colour of scanned pages.</p></div>
+      <div class="fcard"><div class="ic">🖍</div><h3>Highlight</h3><p>Drag to highlight in any colour. Move, resize or remove highlights any time before you save.</p></div>
+      <div class="fcard"><div class="ic">🖼</div><h3>Add images</h3><p>Insert a logo or signature image, crop it, then drag and resize it exactly where you want it.</p></div>
+      <div class="fcard"><div class="ic">📑</div><h3>Pages &amp; files</h3><p>Rotate, delete, insert and re-order pages. Merge PDFs together, or split one into several files and choose which to keep.</p></div>
+      <div class="fcard"><div class="ic">↶</div><h3>Undo &amp; redo</h3><p>Every step can be undone. You are asked before closing anything with unsaved changes.</p></div>
+      <div class="fcard"><div class="ic">🔒</div><h3>Private by design</h3><p>No internet needed. Your documents are opened and saved only on your own computer.</p></div>
+      <div class="fcard"><div class="ic">🗜</div><h3>Compress</h3><p>Make big scanned PDFs much smaller for email or upload. Pick a level; a compressed copy is saved and your original stays untouched.</p></div>
+      <div class="fcard"><div class="ic">📂</div><h3>Opens from Windows</h3><p>Right-click a PDF and choose <i>Open with</i>, or drag a PDF onto the window. Each one opens in its own tab.</p></div>
+      <div class="fcard"><div class="ic">🔍</div><h3>Exact zoom</h3><p>Type any zoom size (like 125), use Ctrl + and Ctrl −, or pick one from the list. Ctrl 0 fits the page to the window width.</p></div>
+      <div class="fcard"><div class="ic">⚡</div><h3>Fast with big scans</h3><p>Only the pages you are looking at are drawn, so long, heavy scanned PDFs open in seconds and stay smooth.</p></div>
     </div>
   </section>
 
-  <section id="install">
+  <section class="sec" id="install">
     <h2>How to install</h2>
     <p class="sub">Takes about a minute. No administrator rights needed.</p>
     <ol class="steps">
@@ -107,23 +145,23 @@
       <li><b>Double-click</b> the downloaded file. If Windows shows <i>“Windows protected your PC”</i>, click <b>More info</b>, then <b>Run anyway</b>.</li>
       <li><b>Follow the steps</b> (the default folder is fine), then open <b>Inazira PDF Reader &amp; Editor</b> from your Desktop or Start menu.</li>
     </ol>
-    <div class="note"><b>Why the Windows warning?</b> The installer is not yet digitally signed with a paid code-signing certificate, so Windows SmartScreen cannot recognise the publisher. You can confirm your download is genuine with the checksums below.</div>
-    <p class="meta" style="margin-top:14px"><b>Make it your default PDF app (optional):</b> right-click any PDF → <b>Open with</b> → <b>Choose another app</b> → <b>Inazira PDF Reader &amp; Editor</b> → tick <i>Always use this app</i>.</p>
-    <p class="meta" style="margin-top:8px">To uninstall: <b>Settings → Apps → Installed apps → Inazira PDF Reader &amp; Editor → Uninstall</b>. The portable ZIP needs no installation: unzip it anywhere and run <code>InaziraPDF.exe</code>.</p>
+    <div class="callout"><b>Why the Windows warning?</b> The installer is not yet digitally signed with a paid code-signing certificate, so Windows SmartScreen cannot recognise the publisher. You can confirm your download is genuine with the checksums below.</div>
+    <p class="muted" style="margin-top:14px"><b>Make it your default PDF app (optional):</b> right-click any PDF → <b>Open with</b> → <b>Choose another app</b> → <b>Inazira PDF Reader &amp; Editor</b> → tick <i>Always use this app</i>.</p>
+    <p class="muted" style="margin-top:8px">To uninstall: <b>Settings → Apps → Installed apps → Inazira PDF Reader &amp; Editor → Uninstall</b>. The portable ZIP needs no installation: unzip it anywhere and run <code>InaziraPDF.exe</code>.</p>
   </section>
 
-  <section id="verify">
+  <section class="sec" id="verify">
     <h2>Check your download</h2>
     <p class="sub">Compare the SHA-256 checksum of the file you downloaded with the value below.</p>
     <table>
       <tr><td>Installer</td><td><code>Inazira-PDF-Reader-Editor-Setup-2.1.1.exe</code><br><span class="hash">10ae0a4011d26e08095880d5e36aa5831bc65f9bca0d70ee059a39c5c0acd5f2</span></td></tr>
       <tr><td>Portable ZIP</td><td><code>Inazira-PDF-Reader-Editor-2.1.1-portable-win-x64.zip</code><br><span class="hash">83df4d35462c3d8e907b62c33ff10b9949813c3bdc89a0f0985af9a7e03b8db3</span></td></tr>
     </table>
-    <p class="meta" style="margin:12px 0 0">In Windows PowerShell:</p>
+    <p class="muted" style="margin:12px 0 0">In Windows PowerShell:</p>
 <pre>Get-FileHash .\Inazira-PDF-Reader-Editor-Setup-2.1.1.exe -Algorithm SHA256</pre>
   </section>
 
-  <section id="requirements">
+  <section class="sec" id="requirements">
     <h2>Good to know</h2>
     <table>
       <tr><td>Works on</td><td>Windows 10 and 11 (64-bit). Other systems are not available yet.</td></tr>
@@ -135,7 +173,7 @@
     </table>
   </section>
 
-  <section id="changelog">
+  <section class="sec" id="changelog">
     <h2>What's new</h2>
     <p class="sub">Version 2.1.1 — 30 October 2026</p>
     <ul class="tight">
@@ -149,8 +187,17 @@
       <li>Rotate, delete, insert, re-order, merge and split pages; full undo and redo.</li>
     </ul>
   </section>
+
 </main>
 
-<footer>© 2026 INAZIRA. All Rights Reserved.</footer>
+<footer>
+  <div class="foot-in">
+    <span id="year-line">&copy; INAZIRA. All rights reserved.</span>
+    <span><a href="https://www.inazira.com/">www.inazira.com</a></span>
+    <!-- add About / Contact / Privacy / Terms / social links here -->
+  </div>
+</footer>
+<script>document.getElementById('year-line').textContent = '\u00A9 ' + new Date().getFullYear() + ' INAZIRA. All rights reserved.';</script>
+
 </body>
 </html>

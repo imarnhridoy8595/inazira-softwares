@@ -38,6 +38,7 @@
   footer { background:var(--navy); color:#cfdcf0; margin-top:10px; }
   .foot-in { max-width:1760px; margin:0 auto; padding:26px clamp(16px, 4vw, 76px); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:14.5px; }
   footer a { color:#fff; text-decoration:none; font-weight:500; } footer a:hover { text-decoration:underline; }
+  .foot-links { display:flex; gap:22px; flex-wrap:wrap; }
 
   main { max-width:1260px; margin:0 auto; padding:0 24px 36px; }
   @media (min-width:1500px) { main { max-width:1380px; } }
@@ -90,7 +91,8 @@
     .title-row { margin-top:6px; } .card h3 { font-size:21px; } .meta { margin-bottom:4px; font-size:13.5px; } .desc { font-size:14.5px; margin-bottom:10px; }
     .btn { padding:10px 24px; font-size:15px; } .points { margin-top:12px; gap:6px; } .points li { font-size:13.5px; }
   }
-  @media (max-width:900px) { .apps { grid-template-columns:1fr; } .topnav { display:none; } .hero-in { flex-direction:column; align-items:flex-start; } .band { grid-template-columns:1fr; } }
+  /* On small screens the nav drops to its own row instead of disappearing, so Apps/Privacy stay reachable */
+  @media (max-width:900px) { .apps { grid-template-columns:1fr; } .topbar-in { height:auto; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; } .topnav { order:3; width:100%; gap:22px; overflow-x:auto; } .topnav a { font-size:16px; } .topnav a.active::after { bottom:-2px; } .hero-in { flex-direction:column; align-items:flex-start; } .band { grid-template-columns:1fr; } }
   @media (max-width:560px) { .brand span { font-size:22px; } .allsites { padding:8px 12px; font-size:13.5px; } .title-row { flex-direction:column; align-items:flex-start; gap:6px; } }
   @media (prefers-reduced-motion:reduce) { .card { animation:none; } * { transition:none !important; } }
 </style>
@@ -103,6 +105,8 @@
     <nav class="topnav" aria-label="Main">
       <a href="https://www.inazira.com/">Home</a>
       <a class="active" href="./">Softwares</a>
+      <a href="apps.html">Apps</a>
+      <a href="privacy.html">Privacy</a>
       <!-- add About / Contact links here when you want them -->
     </nav>
     <a class="allsites" href="https://www.inazira.com/">All websites →</a>
@@ -165,7 +169,7 @@
           <li><b>Merge, split &amp; organise</b> — merge PDFs, split one into several files, rotate, delete and re-order pages, with full undo.</li>
           <li><b>Compress</b> — shrink big scanned PDFs for email or upload; your original stays untouched.</li>
         </ul>
-        <p class="note">Works offline — your files never leave your computer. Windows may warn that the installer is unsigned: click <b>More info</b>, then <b>Run anyway</b>. <a href="pdf-reader-editor.html">Details &amp; checksums →</a></p>
+        <p class="note">Works offline — your files never leave your computer. Windows may warn that the installer is unsigned: click <b>More info</b>, then <b>Run anyway</b>. <a href="pdf-reader-editor.html">Details &amp; checksums →</a> · <a href="privacy-pdf-reader-editor.html">Privacy Policy →</a></p>
       </div>
     </article>
   </div>
@@ -183,8 +187,8 @@
 <footer>
   <div class="foot-in">
     <span id="year-line">&copy; INAZIRA. All rights reserved.</span>
-    <span><a href="https://www.inazira.com/">www.inazira.com</a></span>
-    <!-- add About / Contact / Privacy / Terms / social links here -->
+    <span class="foot-links"><a href="apps.html">Apps</a><a href="privacy.html">Privacy Policy</a><a href="https://www.inazira.com/">www.inazira.com</a></span>
+    <!-- add About / Contact / Terms / social links here -->
   </div>
 </footer>
 <script>document.getElementById('year-line').textContent = '\u00A9 ' + new Date().getFullYear() + ' INAZIRA. All rights reserved.';</script>
